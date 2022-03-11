@@ -1,0 +1,30 @@
+Link da fonte: https://github.com/tonsky/FiraCode
+Link do GOW: https://github.com/bmatzelle/gow
+
+Install-Module oh-my-posh 
+Install-Module posh-git
+Install-Module -Name PowerShellGet -Force
+Install-Module -Name PSReadline -Force -SkipPublisherCheck
+
+New-item -type file -force $profile
+nodepad $profile
+
+#colar no txt q abrir
+
+# Configurações do PowerShell
+# Importar os temas do oh-my-posh e utilizar o Star
+Import-Module posh-git
+Import-Module oh-my-posh
+Set-PoshPrompt Star
+
+# Autocomplete, keybinds e histórico de comandos
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+Set-PSReadlineOption -HistorySearchCursorMovesToEnd
+
+# Autosugestões do PSReadline
+Set-PSReadlineOption -ShowToolTips
+Set-PSReadlineOption -PredictionSource History
+
+clear
