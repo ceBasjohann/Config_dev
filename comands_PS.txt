@@ -28,3 +28,7 @@ Set-PSReadlineOption -ShowToolTips
 Set-PSReadlineOption -PredictionSource History
 
 clear
+
+if(Test-Path 'C:\Users\cailu\.inshellisense\key-bindings-powershell.ps1' -PathType Leaf){. C:\Users\cailu\.inshellisense\key-bindings-powershell.ps1}
+
+#colocar "-nologo" ao chamar o powershell no win term
